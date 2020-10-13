@@ -1,7 +1,7 @@
 [Unit]
 Description=hello-karyon-rxnetty example service
-Requires=Network.target
-After=Network.target
+Requires=network.target auditd.service
+After=network.target
 
 [Service]
 ExecStart=/usr/bin/java java -jar /opt/hello-karyon-rxnetty/hello-karyon-rxnetty*.jar 2>&1 > /var/log/hello-karyon-rxnetty/hello.log
