@@ -84,8 +84,8 @@ task packDeb(type: Deb, dependsOn: fatJar) {
   postInstall = file('pkg_scripts/postInstall.sh')
   postUninstall = file('pkg_scripts/postUninstall.sh')
 
-  from(file('pkg_scripts/hello-karyon-rxnetty.conf')) {
-    into('/etc/init')
+  from(file('pkg_scripts/hello-karyon-rxnetty.service')) {
+    into('/etc/systemd/system')
     user = 'root'
     permissionGroup = 'root'
     fileType = CONFIG | NOREPLACE
