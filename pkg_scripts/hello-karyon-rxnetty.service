@@ -5,6 +5,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/java java -jar /opt/hello-karyon-rxnetty/hello-karyon-rxnetty*.jar 2>&1 > /var/log/hello-karyon-rxnetty/hello.log
+ExecStop=pkill -f  hello-karyon-rxnetty
 
 [Install]
 WantedBy=multi-user.target
