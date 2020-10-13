@@ -57,8 +57,8 @@ public class IndexResource implements RequestHandler<ByteBuf, ByteBuf>{
                         try{
                             instanceId = execCmd("curl http://metadata/computeMetadata/v1/instance/id -H Metadata-Flavor:Google") + execCmd("wget -q -O - http://instance-data/latest/meta-data/instance-id");
                             userdata = System.getenv("USERDATA");
-                            cpumodel = execCmd("cat /proc/cpuinfo | awk '/model name/ {print $0}' | uniq")
-                            hostname = execCmd("hostname")
+                            cpumodel = execCmd("cat /proc/cpuinfo | awk '/model name/ {print $0}' | uniq");
+                            hostname = execCmd("hostname");
                             
 
                         } catch (Exception e){
